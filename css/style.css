@@ -43,8 +43,17 @@ section.chat {
   height: calc(100% - 22%);
   background: pink;
 }
+section.chat ul li {
+  display: block;
+  padding: 5px;
+  background: yellow;
+  border: 1px solid black;
+}
 .chat ul li > img {
   width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 100%;
 }
 
@@ -58,9 +67,12 @@ section.contact_chat {
   height: 7%;
   background: white;
 }
+
+/* Contenuto della chat */
 section.chat_messages {
   height: calc(100% - 14%);
   border: 1px solid black;
+  /* background-image: url("img/sfondo.jpg"); */
 }
 .chat_messages li {
   display: block;
@@ -68,7 +80,6 @@ section.chat_messages {
   padding: 0 50px;
   background: red;
 }
-
 .chat_messages li.received_mess > p, .chat_messages li.sent_mess > p {
   display: inline-block;
   padding: 5px 10px;
@@ -81,7 +92,6 @@ section.chat_messages {
 .chat_messages li.received_mess > p {
   background: white;
 }
-
 
 .chat_messages li.sent_mess {
   text-align: right;
