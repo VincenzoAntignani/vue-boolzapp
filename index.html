@@ -6,14 +6,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <!-- Vue js -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <!-- JS -->
-    <script src="js/main.js" charset="utf-8"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <title>Boolzapp</title>
   </head>
   <body>
     <div id="root" class="macro_container">
+      <!-- Sezione sinistra -->
       <div class="container_left">
         <section class="utent">
 
@@ -25,16 +24,23 @@
 
         </section>
         <section class="chat">
-        
+          <ul>
+            <li v-for="element in contacts">
+              <img :src="element.avatar" alt="">{{element.name}}</li>
+          </ul>
         </section>
       </div>
 
+      <!-- Sezione destra -->
       <div class="container_right">
         <section class="contact_chat">
 
         </section>
         <section class="chat_messages">
-
+          <ul>
+            <li class="sent_mess"><p>Inviato</p></li>
+            <li class="received_mess"> <p>Ricevuto</p> </li>
+          </ul>
         </section>
         <section class="write_message">
 
@@ -42,5 +48,7 @@
       </div>
 
     </div>
+
+    <script src="js/main.js" charset="utf-8"></script>
   </body>
 </html>
