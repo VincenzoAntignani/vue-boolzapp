@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: -webkit-linear-gradient(top, #128C7E 20%, lightgrey 20%)
+}
