@@ -5,6 +5,60 @@
 }
 
 body {
+  display: flex;
   height: 100vh;
-  background: -webkit-linear-gradient(top, #128C7E 20%, lightgrey 20%)
+  background: -webkit-linear-gradient(top, #128C7E 15%, lightgrey 15%);
+  font-family: sans-serif;
+}
+
+.macro_container {
+  display: flex;
+  width: 85%;
+  height: 95%;
+  background: whitesmoke;
+  margin: auto;
+}
+
+
+/* Parte sinistra */
+.container_left {
+  width: 35%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+section.utent {
+  height: 7%;
+  background: lime;
+}
+section.notifications {
+  height: 10%;
+  background: coral;
+}
+section.search {
+  height: 5%;
+  background: dodgerblue;
+}
+section.chat {
+  height: calc(100% - 22%);
+  background: pink;
+}
+
+/* Parte destra */
+.container_right {
+  width: 65%;
+  height: 100%;
+  border: 1px solid red;
+}
+section.contact_chat {
+  height: 7%;
+  background: white;
+}
+section.chat_messages {
+  height: calc(100% - 14%);
+  border: 1px solid black;
+}
+section.write_message {
+  height: 7%;
+  background: lime;
 }
