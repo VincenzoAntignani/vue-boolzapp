@@ -2,6 +2,8 @@ const app = new Vue (
   {
     el: "#root",
     data: {
+      sentClass: 'sent_mess',
+      receivedClass: 'received_mess',
       contacts: [
         // Oggetto Michele
       	{
@@ -30,7 +32,7 @@ const app = new Vue (
         //Oggetto Fabio
       	{
       		name: 'Fabio',
-      		avatar: 'https://lh3.googleusercontent.com/proxy/2ZfkaB32rbgNMhhf8_dnwate8vpNt3pUnLgLwMvpegkYA9e0klTqmJ-TvZZoYGRosc_psbxFfs5zjQxL6Y6QTz5GejSFOVheGHl2a5ujZjBDUpcIp7PS1h32fdnz9Og',
+      		avatar: 'https://assets.puzzlefactory.pl/puzzle/249/520/original.jpg',
       		visible: true,
       		messages: [
       			{
@@ -95,7 +97,15 @@ const app = new Vue (
       	},
       ]
       //Fine array contacts
-    }
+    },
+    // methods: {
+    //   mexinviato: function() {
+    //     if(this.status == 'sent') {
+    //
+    //     }
+    //   }
+    // }
+
 
   }
 );
