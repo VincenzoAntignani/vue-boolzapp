@@ -95,13 +95,17 @@ const app = new Vue (
       			}
       		],
       	},
-      ]
+      ],
       //Fine array contacts
+      currentMex: 0,
     },
     methods: {
-      
-
+      addNumber: function() {
+        this.currentMex++;
+        console.log(this.currentMex);
+      }
     }
+
 
 
   }

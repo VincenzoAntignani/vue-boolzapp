@@ -188,6 +188,7 @@ section.chat ul li:hover {
 .container_right {
   width: 66%;
   height: 100%;
+  border-left: 1px solid grey;
 }
 
 section.contact_chat {
@@ -196,7 +197,6 @@ section.contact_chat {
   padding: 0 10px;
   height: 7%;
   background: #ECECEC;
-  border-left: 1px solid lightgrey;
 }
 .container_right .chat_of, .container_right .cta_icons {
   width: 50%;

@@ -65,12 +65,13 @@
 
       <!-- Sezione destra -->
       <div class="container_right">
+
         <section class="contact_chat">
-          <div class="chat_of" v-for="contact in contacts">
+          <div class="chat_of" v-for="(contact, index) in contacts">
             <img :src="contact.avatar" alt="">
             <ul>
-              <li>Nome</li>
-              <li>Ultimo accesso</li>
+              <li>{{contact.name}}</li>
+              <li>{{contact.name}}</li>
             </ul>
           </div>
           <div class="cta_icons">
@@ -84,7 +85,7 @@
 
         <section class="chat_messages">
           <ul>
-            <li v-for="contact in contacts[0].messages" :class="(contact.status == 'sent') ? 'sent_mess' : 'received_mess'">
+            <li v-for="contact in contacts[currentMex].messages" :class="(contact.status == 'sent') ? 'sent_mess' : 'received_mess'">
               <p>{{contact.text}} <span>{{contact.date}}</span> </p>
 
             </li>
@@ -105,6 +106,8 @@
       </div>
 
     </div>
+
+    <button type="button" name="button" @click="addNumber">vai avanti di uno</button>
 
     <script src="js/main.js" charset="utf-8"></script>
   </body>
