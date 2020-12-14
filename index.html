@@ -66,11 +66,11 @@
       <!-- Sezione destra -->
       <div class="container_right">
         <section class="contact_chat">
-          <div class="chat_of">
-            <img src="https://www.jakweb.ch/hd3//package/modern/avatar/5.jpg" alt="">
+          <div class="chat_of" v-for="contact in contacts">
+            <img :src="contact.avatar" alt="">
             <ul>
               <li>Nome</li>
-              <li>Ultimo accesso oggi alle</li>
+              <li>Ultimo accesso</li>
             </ul>
           </div>
           <div class="cta_icons">
@@ -84,8 +84,8 @@
 
         <section class="chat_messages">
           <ul>
-            <li v-for="element in contacts[0].messages" :class="(element.status == 'sent') ? 'sent_mess' : 'received_mess'">
-              <p>{{element.text}} <span>{{element.date}}</span> </p>
+            <li v-for="contact in contacts[0].messages" :class="(contact.status == 'sent') ? 'sent_mess' : 'received_mess'">
+              <p>{{contact.text}} <span>{{contact.date}}</span> </p>
 
             </li>
           </ul>

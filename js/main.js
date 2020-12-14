@@ -98,13 +98,10 @@ const app = new Vue (
       ]
       //Fine array contacts
     },
-    // methods: {
-    //   mexinviato: function() {
-    //     if(this.status == 'sent') {
-    //
-    //     }
-    //   }
-    // }
+    methods: {
+      
+
+    }
 
 
   }

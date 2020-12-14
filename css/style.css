@@ -73,7 +73,7 @@ section.utent {
 section.notifications {
   display: flex;
   height: 9%;
-  background: #87CEFA;
+  background: #8edafc;
 }
 .notifications .icon_notif {
   display: flex;
@@ -87,7 +87,7 @@ section.notifications {
   width: 40px;
   height: 40px;
   background: white;
-  color: #87CEFA;
+  color: #8edafc;
   line-height: 40px;
   border-radius: 100%;
   font-weight: 700;
@@ -163,9 +163,14 @@ section.chat ul li:hover {
   font-weight: 700;
 }
 .chat .name_avatar span:last-child {
+  display: inline-block;
   color: grey;
   font-size: 11px;
   font-weight: 400;
+  width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .chat .date_last_mess {
   width: 35%;
@@ -229,9 +234,9 @@ section.contact_chat {
 section.chat_messages {
   padding: 50px 70px;
   height: calc(100% - 14%);
-  background: url("https://d2p8jjwwnx090z.cloudfront.net/197/409/849/-299996991-1tom01g-bk4or1htcdjhie5/original/file.jpg");
+  background-image: url('../img/sfondo.jpg');
   background-size: cover;
-  /* background-image:url('img/sfondo.jpg'); */
+  background-position: center;
 }
 .chat_messages li {
   display: block;
@@ -277,7 +282,7 @@ section.write_message {
   display: flex;
   justify-content: space-between;
   height: 7%;
-  background: #ECE5DD;
+  background: #ececec;
 }
 .write_message .emoji, .write_message .speak {
   display: flex;
