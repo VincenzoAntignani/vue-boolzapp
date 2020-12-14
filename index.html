@@ -17,7 +17,7 @@
         <section class="utent">
           <div class="my_avatar">
             <img src="https://www.andrealincetto.com/img/avatar.png" alt="">
-            <span>Nome Utente</span>
+            <h4>Enzo Antignani</h4>
           </div>
           <div class="icons_utent">
             <ul>
@@ -47,7 +47,7 @@
 
         <section class="chat">
           <ul>
-            <li v-for="(contact, index) in contacts">
+            <li v-for="(contact, index) in contacts" @click="chat(index)">
               <div class="img_avatar">
                 <img :src="contact.avatar" alt="">
               </div>
@@ -67,11 +67,11 @@
       <div class="container_right">
 
         <section class="contact_chat">
-          <div class="chat_of" v-for="(contact, index) in contacts">
-            <img :src="contact.avatar" alt="">
+          <div class="chat_of">
+            <img :src="contacts[currentChat].avatar" alt="">
             <ul>
-              <li>{{contact.name}}</li>
-              <li>{{contact.name}}</li>
+              <li>{{contacts[currentChat].name}}</li>
+              <li>Ultimo accesso</li>
             </ul>
           </div>
           <div class="cta_icons">
@@ -85,7 +85,9 @@
 
         <section class="chat_messages">
           <ul>
-            <li v-for="contact in contacts[currentMex].messages" :class="(contact.status == 'sent') ? 'sent_mess' : 'received_mess'">
+            <li
+            v-for="contact in contacts[currentChat].messages" :class="(contact.status == 'sent') ? 'sent_mess' : 'received_mess'"
+            >
               <p>{{contact.text}} <span>{{contact.date}}</span> </p>
 
             </li>
@@ -97,7 +99,7 @@
             <i class="far fa-smile"></i>
           </div>
           <div class="write">
-            <input type="text" name="" value="" placeholder="Scrivi messaggio">
+            <input type="text" placeholder="Scrivi messaggio"v-model="myNewMessage" v-on:keyup.enter="sendMessage">
           </div>
           <div class="speak">
             <i class="fas fa-microphone"></i>
@@ -107,7 +109,6 @@
 
     </div>
 
-    <button type="button" name="button" @click="addNumber">vai avanti di uno</button>
 
     <script src="js/main.js" charset="utf-8"></script>
   </body>

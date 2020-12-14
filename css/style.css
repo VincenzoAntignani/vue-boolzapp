@@ -45,20 +45,21 @@ section.utent {
   display: flex;
   align-items: center;
   margin: 0 5px;
-  width: 50%;
+  width: 70%;
   height: 100%;
 }
 .utent .my_avatar img {
   width: 40px;
+  margin-right: 5px;
 }
-.utent .my_avatar span {
-  font-size: 12px;
+.utent .my_avatar h4 {
+  /* font-size: 12px;
   font-weight: 700;
-  margin-left: 5px;
+  margin-left: 5px; */
 }
 .utent .icons_utent {
   margin: auto 10px;
-  width: 50%;
+  width: 30%;
   text-align: right;
 }
 .utent .icons_utent li {
@@ -237,10 +238,11 @@ section.chat_messages {
   background-image: url('../img/sfondo.jpg');
   background-size: cover;
   background-position: center;
+  overflow-y: auto;
 }
 .chat_messages li {
   display: block;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 .chat_messages li::after {
   content: "";
@@ -253,7 +255,7 @@ section.chat_messages {
 }
 .chat_messages li p {
   position:relative;
-  padding: 15px 15px 20px 15px;
+  padding: 10px 20px 25px 15px;
   border-radius: 10px;
   max-width: 50%;
   min-width: 25%;

@@ -97,12 +97,43 @@ const app = new Vue (
       	},
       ],
       //Fine array contacts
-      currentMex: 0,
+      currentChat: 0,
+      newMessage: {},
+      myNewMessage: '',
+      newReceived: {},
+      yourNewMessage: '',
+
     },
     methods: {
-      addNumber: function() {
-        this.currentMex++;
-        console.log(this.currentMex);
+
+      chat: function(index) {
+        this.currentChat = index;
+      },
+
+      sendMessage: function() {
+        //Devo creare una var che mi faccia entrare nell'array messages
+        let objnewMessage = this.contacts[this.currentChat].messages;
+        console.log(objnewMessage);
+
+        if(this.myNewMessage == '') {
+          alert("Attenzione!Non puoi inviare un messaggio vuoto!")
+        } else {
+          this.newMessage.text = this.myNewMessage;
+          this.myNewMessage = '';
+          this.newMessage.status = 'sent';
+          this.newMessage.date = '14/12/2020 18:00'
+          objnewMessage.push(this.newMessage);
+
+          setTimeout(
+            () => {
+              this.newReceived.text = 'ok!';
+              this.newReceived.status = 'received';
+              this.newReceived.date = '14/12/2020 18:01'
+              objnewMessage.push(this.newReceived);
+            }
+            ,1000)
+        }
+
       }
     }
 
