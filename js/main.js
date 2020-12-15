@@ -122,7 +122,7 @@ const app = new Vue (
           this.newMessage.text = this.myNewMessage;
           this.myNewMessage = '';
           this.newMessage.status = 'sent';
-          this.newMessage.date = dayjs().format('DD/MM/YYYY HH:mm');
+          this.newMessage.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
           objnewMessage.push(this.newMessage);
 
           setTimeout(
@@ -146,11 +146,14 @@ const app = new Vue (
            console.log(element.visible);
           }
         );
+      },
+
+      removeMessage: function(index) {
+        let objnewMessage = this.contacts[this.currentChat].messages;
+        objnewMessage.splice(index, 1);
       }
 
-
     }
-
 
 
   }

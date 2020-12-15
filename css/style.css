@@ -18,7 +18,9 @@ ul {
 .active {
   background: lightgrey;
 }
-
+i:hover {
+  cursor: pointer;
+}
 
 input {
   outline: none;
@@ -237,42 +239,50 @@ section.chat_messages {
   background-size: cover;
   overflow-y: scroll;
 }
-.chat_messages li {
-  display: block;
+
+.chat_content {
   margin: 5px 0;
 }
-.chat_messages li::after {
+.chat_content::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.chat_messages li {
-  padding: 5px;
+.chat_content p.sent_mess {
+  background: #DCF8C6;
+  float:right;
 }
-.chat_messages li p {
-  position:relative;
-  padding: 10px 20px 25px 15px;
+.chat_content p.received_mess {
+  max-width: 50%;
+  background: white;
+  float:left;
+}
+
+.chat_content p {
+  position: relative;
+  padding: 10px 30px 25px 15px;
   border-radius: 10px;
   max-width: 50%;
   min-width: 25%;
 }
-.chat_messages li p span {
+.chat_content p span {
   position: absolute;
   right: 5px;
   bottom: 5px;
   font-size: 10px;
 }
-
-.chat_messages li.sent_mess p {
-  background: #DCF8C6;
-  float:right;
+.chat_content p span:last-child {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: red;
+  font-size: 11px;
+  transition: all 0.3s 0s ease;
+  opacity: 0;
 }
-
-.chat_messages li.received_mess p {
-  max-width: 50%;
-  background: white;
-  float:left;
+.chat_content p:hover span:last-child {
+  opacity: 1;
 }
 /* /Contenuto della chat */
 

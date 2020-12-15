@@ -93,14 +93,24 @@
         </section>
 
         <section class="chat_messages">
-          <ul>
+          <!-- <ul>
             <li
-            v-for="contact in contacts[currentChat].messages" :class="(contact.status == 'sent') ? 'sent_mess' : 'received_mess'"
+              v-for="(contact, index) in contacts[currentChat].messages" :class="(contact.status == 'sent') ? 'sent_mess' : 'received_mess'"
             >
-              <p>{{contact.text}} <span>{{contact.date}}</span> </p>
-
+              <p>{{contact.text}}
+                <span @click="removeMessage(index)"><i class="fas fa-trash-alt"></i></span> <span>{{contact.date}}</span>
+               </p>
             </li>
-          </ul>
+          </ul> -->
+          <div class="chat_content"
+            v-for="(contact, index) in contacts[currentChat].messages"
+          >
+            <p :class="(contact.status == 'sent') ? 'sent_mess' : 'received_mess'">{{contact.text}}
+              <span>{{contact.date}}</span>
+              <span @click="removeMessage(index)"><i class="fas fa-trash-alt"></i></span>
+            </p>
+
+          </div>
         </section>
 
         <section class="write_message">
