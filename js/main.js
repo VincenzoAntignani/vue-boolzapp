@@ -102,6 +102,7 @@ const app = new Vue (
       myNewMessage: '',
       newReceived: {},
       yourNewMessage: '',
+      searchNameContact: '',
 
     },
     methods: {
@@ -121,20 +122,33 @@ const app = new Vue (
           this.newMessage.text = this.myNewMessage;
           this.myNewMessage = '';
           this.newMessage.status = 'sent';
-          this.newMessage.date = '14/12/2020 18:00'
+          this.newMessage.date = dayjs().format('DD/MM/YYYY HH:mm');
           objnewMessage.push(this.newMessage);
 
           setTimeout(
             () => {
               this.newReceived.text = 'ok!';
               this.newReceived.status = 'received';
-              this.newReceived.date = '14/12/2020 18:01'
+              this.newReceived.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
               objnewMessage.push(this.newReceived);
             }
             ,1000)
         }
+      },
 
+      search: function() {
+        this.contacts.forEach(
+          (element) => {
+           element.visible = false; //Parto dal presupposto che sia falso per poi portarlo a vero con un if
+           if(element.name.includes(this.searchNameContact)) {
+             element.visible = true;
+           }
+           console.log(element.visible);
+          }
+        );
       }
+
+
     }
 
 

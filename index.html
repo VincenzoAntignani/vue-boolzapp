@@ -2,8 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- Day JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.7/dayjs.min.js" integrity="sha512-kZ+x2gdehn6OZMWZSp3Vt5R+v9hQTYEATQwaUfWquhxbvNVAy6IRtYs7asdyxKUTqG0I5ZqBqnzcBrpnHJCAGw==" crossorigin="anonymous"></script>
     <!-- Vue js -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- CSS -->
@@ -41,13 +46,17 @@
         </section>
 
         <section class="search">
-          <button><i class="fas fa-search"></i></button>
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
+          <button @click="search"><i class="fas fa-search"></i></button>
+          <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchNameContact" v-on:keyup.enter="search">
         </section>
 
         <section class="chat">
           <ul>
-            <li v-for="(contact, index) in contacts" @click="chat(index)">
+            <li v-for="(contact, index) in contacts"
+             @click="chat(index)"
+             v-if="(contact.visible) ? contact.visible : ''"
+            :class="(currentChat == index) ? 'active' : ''">
+            <!-- con il v-if qui sopra indico che se quello che inserisco nel campo di input sopra è vero, allora mostro il contatto cercato -->
               <div class="img_avatar">
                 <img :src="contact.avatar" alt="">
               </div>

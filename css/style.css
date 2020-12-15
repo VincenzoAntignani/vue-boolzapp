@@ -8,13 +8,16 @@ body {
   display: flex;
   height: 100vh;
   background: -webkit-linear-gradient(top, #128C7E 15%, lightgrey 15%);
-  font-family: arial;
+  font-family: 'Lato', sans-serif;
 }
 
 ul {
   list-style: none;
 }
 
+.active {
+  background: lightgrey;
+}
 
 
 input {
@@ -51,11 +54,6 @@ section.utent {
 .utent .my_avatar img {
   width: 40px;
   margin-right: 5px;
-}
-.utent .my_avatar h4 {
-  /* font-size: 12px;
-  font-weight: 700;
-  margin-left: 5px; */
 }
 .utent .icons_utent {
   margin: auto 10px;
@@ -237,8 +235,7 @@ section.chat_messages {
   height: calc(100% - 14%);
   background-image: url('../img/sfondo.jpg');
   background-size: cover;
-  background-position: center;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 .chat_messages li {
   display: block;
@@ -278,7 +275,6 @@ section.chat_messages {
   float:left;
 }
 /* /Contenuto della chat */
-
 
 section.write_message {
   display: flex;
